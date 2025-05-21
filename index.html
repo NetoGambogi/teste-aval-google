@@ -1,34 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-  <h2>O que nossos clientes dizem</h2>
-  <div id="reviews"></div>
-
-  <script>
-    fetch('/api/googleReviews')
-      .then(response => response.json())
-      .then(reviews => {
-        const container = document.getElementById('reviews');
-        reviews.forEach(r => {
-          const div = document.createElement('div');
-          div.className = 'review';
-          div.innerHTML = `
-            <strong>${r.author_name}</strong> - ⭐${r.rating}<br>
-            <p>${r.text}</p>
-          `;
-          container.appendChild(div);
-        });
-      })
-      .catch(err => {
-        document.getElementById('reviews').innerText = 'Erro ao carregar avaliações.';
-        console.error(err);
-      });
-  </script>
+  
 </body>
 </html>
